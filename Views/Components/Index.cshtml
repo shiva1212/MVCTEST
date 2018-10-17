@@ -1,0 +1,178 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MvcTest.Models.Gen_Mst_Components>
+
+@{
+    ViewBag.Title = "Components";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Components</h2>
+<div style="font-family:Arial">
+    <p>
+        @Html.ActionLink("Create New Record", "Create")
+    </p>
+    <p>
+        @using (Html.BeginForm())
+        {
+            <label for="SearchString">ComponentsName:</label>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <button type="submit" name="ComponentsName" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+        }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ModuleCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ScreenCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().TabPageCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Componentscode)
+            </th>
+            <th>
+                @Html.ActionLink("ComponentsName", "Index", new { sortBy = ViewBag.SortComponentsNameParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchingString"] })
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ComponentsOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedBy)
+            </th>
+            <th>
+                @Html.ActionLink("CreatedDate", "Index", new { sortBy = ViewBag.SortCreatedDateParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchingString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().RowNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().DataComments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Datatype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Tablecode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().FieldName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Gen_Mst_Screen.ScreenName)
+            </th>
+            <th>Action</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr class="text-danger">
+                <td colspan="14"><b>No Rows Match Search Criteria</b></td>
+            </tr>
+        }
+        else
+        {
+
+
+
+            foreach (var item in Model)
+            {
+                <tr class="text-success">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ScreenCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TabPageCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Componentscode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ComponentsName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ComponentsOrder)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RowNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataComments)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Datatype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Length)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tablecode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FieldName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gen_Mst_Screen.ScreenName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.RowNum }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.RowNum }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.RowNum })
+                        @*<center>
+                            <a href="@Url.Action("Details","Components",new {id = item.RowNum })">
+                                <img src="@Url.Content("~/Images/info.png")" alt="Details" />
+                            </a> <br />
+                            <a href="@Url.Action("Edit","Components",new {id = item.RowNum })">
+                                <img src="@Url.Content("~/Images/pen.png")" alt="Edit" />
+                            </a> <br />
+                            <a href="@Url.Action("Delete","Components",new {id = item.RowNum })">
+                                <img src="@Url.Content("~/Images/bin.png")" alt="Delete" />
+                            </a>
+                        </center>*@
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, SearchString = Request.QueryString["SearchString"], currentFilter = Request.QueryString["currentFilter"], sortBy = Request["sortBy"] }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })

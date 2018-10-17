@@ -1,0 +1,174 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MvcTest.Models.Gen_Mst_Client>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="font-family:Arial">
+    <h2>Client</h2>
+
+    <p>
+        @Html.ActionLink("Create New record", "Create")
+    </p>
+    <p>
+        @using (@Html.BeginForm())
+        {
+            <label for="SearchString">Name:</label>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <button type="submit" name="Name" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+        }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ClientCode)
+            </th>
+            <th>
+                @Html.ActionLink("Name", "Index", new { sortBy = ViewBag.SortNameParameter, CurrentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.ActionLink("Address1", "Index", new { sortBy = ViewBag.SortAddress1Parameter, CurrentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Address2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().StateName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ZipCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Fax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedDate)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().SendConfirm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().MedazVersion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Sqlversion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Gen_Mst_Product.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Rights_MST_UserMaster.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Rights_MST_UserMaster1.Name)
+            </th>
+            <th>Action</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr class="text-danger">
+                <td colspan="14"><b>No Rows Match Search Criteria</b></td>
+            </tr>
+        }
+        else
+        {
+
+            foreach (var item in Model)
+            {
+                <tr class="text-success">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CityName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StateName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZipCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fax)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SendConfirm)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MedazVersion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sqlversion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gen_Mst_Product.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rights_MST_UserMaster.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rights_MST_UserMaster1.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ClientCode }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ClientCode }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ClientCode })
+                        @*<center>
+                            <a href="@Url.Action("Details","Client",new {id = item.ClientCode })">
+                                <img src="@Url.Content("~/Images/info.png")" alt="Details" />Details
+                            </a> <br />
+                            <a href="@Url.Action("Edit","Client",new {id = item.ClientCode })">
+                                <img src="@Url.Content("~/Images/pen.png")" alt="Edit" />Edit
+                            </a> <br />
+                            <a href="@Url.Action("Delete","Client",new {id = item.ClientCode })">
+                                <img src="@Url.Content("~/Images/bin.png")" alt="Delete" />Delete
+                            </a>
+                        </center>*@
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, SearchString = Request.QueryString["SearchString"], currentFilter = Request.QueryString["currentFilter"], sortBy = Request["sortBy"] }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })

@@ -1,0 +1,129 @@
+﻿@model MvcTest.Models.Gen_Mst_HowDoI
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ScreenCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScreenCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DemoSourceFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DemoSourceFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VideoFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GifFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GifFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gen_Mst_Screen.ScreenName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gen_Mst_Screen.ScreenName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TopicName }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

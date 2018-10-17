@@ -1,0 +1,148 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MvcTest.Models.Gen_Mst_HowDoI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="font-family:Arial">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New record", "Create")
+    </p>
+    <p>
+        @using (@Html.BeginForm())
+        {
+            <label for="SearchString">TopicName:</label>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <button type="submit" name="TopicName" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+        }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ModuleCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ScreenCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().TopicId)
+            </th>
+            <th>
+                @Html.ActionLink("TopicName", "Index", new { sortBy = ViewBag.SortTopicNameParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().TDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().TopicOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().DemoSourceFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().WordFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().VideoFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CreatedBy)
+            </th>
+            <th>
+                @Html.ActionLink("CreatedDate", "Index", new { sortBy = ViewBag.SortTopicNameParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().GifFile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Gen_Mst_Screen.ScreenName)
+            </th>
+            <th>Action</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr class="text-danger">
+                <td colspan="10"><strong>No Rows</strong> </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr class="text-success">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModuleCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ScreenCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TopicId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TopicName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TopicOrder)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DemoSourceFile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WordFile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VideoFile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GifFile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gen_Mst_Screen.ScreenName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.TopicName }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.TopicName }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.TopicName })
+                        @*<center>
+                            <a href="@Url.Action("Details","HowDoI",new {id = item.TopicName })">
+                                <img src="@Url.Content("~/Images/info.png")" alt="Details" />Details
+                            </a> <br />
+                            <a href="@Url.Action("Edit","HowDoI",new {id = item.TopicName })">
+                                <img src="@Url.Content("~/Images/pen.png")" alt="Edit" />Edit
+                            </a> <br />
+                            <a href="@Url.Action("Delete","HowDoI",new {id = item.TopicName })">
+                                <img src="@Url.Content("~/Images/bin.png")" alt="Delete" />Delete
+                            </a>
+                        </center>*@
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, SearchString = Request.QueryString["SearchString"], sortBy = Request["sortBy"] }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })

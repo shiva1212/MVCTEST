@@ -1,0 +1,102 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MvcTest.Models.Gen_Mst_Screen>
+
+@{
+    ViewBag.Title = "Screen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="font-family:Arial">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New Record", "Create")
+    </p>
+    <p>
+        @using (Html.BeginForm())
+        {
+            <label for="SearchString">ScreenName</label>
+            @Html.TextBox("SearchString",ViewBag.CurrentFilter as string)
+            <button type="submit" name="ScreenName" class="btn-btn-info">
+                <span class="glyphicon glyphicon-search"></span>Search
+            </button>
+        }
+
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ModuleCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ScreenCode)
+            </th>
+            <th>
+                @Html.ActionLink("ScreenName", "Index", new { sortBy = ViewBag.SortScreenNameParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Comments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ScreenOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedDate)
+            </th>
+            <th>Action</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr class="text-danger">
+                <td colspan="7"><b>No Rows Match Search Criteria</b></td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScreenName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScreenOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModifiedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RowNum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gen_Mst_Module.ModuleName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.ScreenName }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ScreenName }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ScreenName })
+                </td>
+            </tr>
+            }
+        }
+    </table>
+</div>

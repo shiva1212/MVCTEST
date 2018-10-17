@@ -1,0 +1,106 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MvcTest.Models.EmailBilling>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EmailBillings</h2>
+<div style="font-family:Arial">
+    <p>
+        @Html.ActionLink("Create New Record", "Create")
+    </p>
+    <p>
+        @using (Html.BeginForm())
+        {
+            <label for="SearchString">ClientCode:</label>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <button type="submit" name="ClientCode" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+        }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.ActionLink("ClientCode", "Index", new { sortBy = ViewBag.SortClientCodeParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().FromEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CreatedDate)
+            </th>
+            <th>Action</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Rows Match Search Criteria</td>
+            </tr>
+        }
+        else
+        {
+
+
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClientCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FromEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ReferenceNo }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ReferenceNo }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ReferenceNo })
+                        @*<center>
+                            <a href="@Url.Action("Details","EmailBillings",new {id = item.ReferenceNo })">
+                                <img src="@Url.Content("~/Images/info.png")" alt="Details" />
+                            </a> <br />
+                            <a href="@Url.Action("Edit","EmailBillings",new {id = item.ReferenceNo })">
+                                <img src="@Url.Content("~/Images/pen.png")" alt="Details" />
+                            </a> <br />
+                            <a href="@Url.Action("Delete","EmailBillings",new {id = item.ReferenceNo })">
+                                <img src="@Url.Content("~/Images/bin.png")" alt="Details" />
+                            </a>
+                        </center>*@
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, SearchString = Request.QueryString["SearchString"], sortBy = Request["sortBy"] }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })

@@ -1,0 +1,60 @@
+﻿@model MvcTest.Models.Gen_Mst_DocumentType
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DocCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DocCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DocDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DocDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rights_MST_UserMaster.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rights_MST_UserMaster.Name)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DocCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

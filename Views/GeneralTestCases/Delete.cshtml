@@ -1,0 +1,99 @@
+﻿@model MvcTest.Models.Gen_Mst_GeneralTestCases
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCaseCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCaseCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StandardName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StandardName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StandardDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StandardDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCaseOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCaseOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gen_Mst_TestCaseType.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gen_Mst_TestCaseType.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rights_MST_UserMaster.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rights_MST_UserMaster.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rights_MST_UserMaster1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rights_MST_UserMaster1.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default"
+                   onclick="return confirm('Are you sure you want to delete record');" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

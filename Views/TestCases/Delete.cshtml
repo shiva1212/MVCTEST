@@ -1,0 +1,151 @@
+﻿@model MvcTest.Models.Gen_Mst_TestCases
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ModuleCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModuleCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ScreenCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScreenCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TabPagecode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TabPagecode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentsCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentsCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FunctionName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FunctionName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scenario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scenario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedResults)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedResults)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReferenceTables)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReferenceTables)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCaseOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCaseOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Objective)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Objective)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataInputs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataInputs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualResults)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualResults)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default"
+                   onclick="return confirm('Are you sure you want to delete record');" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

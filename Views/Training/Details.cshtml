@@ -1,0 +1,108 @@
+﻿@model MvcTest.Models.Gen_Mst_DevTraining
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.File1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.File1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.File2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.File2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.File3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.File3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gen_Mst_DocumentType.DocDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gen_Mst_DocumentType.DocDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gen_Mst_Technology.TechDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gen_Mst_Technology.TechDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rights_MST_UserMaster.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rights_MST_UserMaster.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rights_MST_UserMaster1.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rights_MST_UserMaster1.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TopicId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

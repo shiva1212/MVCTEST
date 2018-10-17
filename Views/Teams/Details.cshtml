@@ -1,0 +1,57 @@
+﻿@model MvcTest.Models.Gen_Mst_Teams
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TeamCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeamDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Rights_MST_UserMaster.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rights_MST_UserMaster.Name)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TeamCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

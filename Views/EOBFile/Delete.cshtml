@@ -1,0 +1,121 @@
+﻿@model MvcTest.Models.Bill_Det_EOBFile
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Bill_Det_EOBFile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillPostId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillPostId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChequeNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChequeNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EOBFileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EOBFileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalEOBFile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalEOBFile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EOBPageNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EOBPageNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Mst_1500Form.ClientCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Mst_1500Form.ClientCode)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" 
+                   onclick="return confirm('Are you sure you want to delete this record')"/> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

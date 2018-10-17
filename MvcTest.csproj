@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{50E57574-7929-48F0-B7A3-71A7D581E26E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcTest</RootNamespace>
+    <AssemblyName>MvcTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.9.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.6\lib\net45\ClientDependency.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.89.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.0.1.89\lib\net45\Examine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.6\lib\net45\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.8.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.8.7\lib\net45\ImageProcessor.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Log4Net.Async, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Log4Net.Async.2.0.4\lib\net40\Log4Net.Async.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.0.0\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.2\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BillDet1500FormController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
+    <Compile Include="Controllers\TrainingController.cs" />
+    <Compile Include="Controllers\DocumentTypeController.cs" />
+    <Compile Include="Controllers\EmailBillingsController.cs" />
+    <Compile Include="Controllers\EOBFileController.cs" />
+    <Compile Include="Controllers\GeneralTestCasesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HowDoIController.cs" />
+    <Compile Include="Controllers\IssuePriorityController.cs" />
+    <Compile Include="Controllers\IssueStatusController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ScreenController.cs" />
+    <Compile Include="Controllers\TableController.cs" />
+    <Compile Include="Controllers\TabPageController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="Controllers\TestCasesController.cs" />
+    <Compile Include="Controllers\TestCaseTypeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\versionController.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bill_Det_1500Form.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bill_Det_EOBFile.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bill_Mst_1500Form.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client_Deliverables.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client_Meetings.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client_Mst_Versions.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\dtproperty.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailBilling.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailBilling_Detail.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailSupport.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailSupport_backup.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailSupport_Detail.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_Mst_Personal.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Custom_Ctrl.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Custom_Number.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Custom_Seq_Ctrl.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Det_MedazFollowup.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_DET_UserPrefer.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Appsettings.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_BillingEmails.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_BusLogic.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Client.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_ClientInfo.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_ClientMachines.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_ClientMachines_BACKUP.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Client_EmailID.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Components.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_DevTraining.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_DocumentType.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Emails.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GEN_MST_EMAILS_5312013.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Employee.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_ErrLog.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Files.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_GeneralTestCases.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_HowDoI.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_IssuePriority.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_IssueStatus.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_IssueType.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_MedazErrLog.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_MedazFollowup.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Module.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_MyTask.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_PRDSTDTestCases.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Product.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Requirements.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Screen.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Table.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_TabPage.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Teams.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_Technology.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_TestCases.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_TestCaseType.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_mst_TestingProcess.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_UserPrefer.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_version.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_VersionUpdate.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_VersionUpdateDetail.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Gen_Mst_VersionUpdate_BACKUP.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ISO_MST_Heading.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueDetail.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueDetails_backup_11012012.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueMaster.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueMasterOld.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IssueMaster_backup_11012012.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue_Defects.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue_Defects_backup_11012012.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue_Defects_backup_11062012.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue_Defects_History.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue_Testcases.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Issue_Testcases_backup_11012012.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mvctest.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mvctest.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mvctest.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mvctest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mvctest.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyTask_Details.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_Det_Role_Access.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_DET_Role_Actions.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_DET_Role_Menu.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_DET_User_Actions.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_DET_User_Menu.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_MST_Action.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_MST_Menu.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_MST_Role.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_MST_Screen.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_MST_UserAccounts.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rights_MST_UserMaster.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_KeyActions.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_KeyCodes.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Sysmz_mst_reports.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_MST_RepParamType.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_Static_Values.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_Static_Values1.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_Static_Values_status.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_Static_Values_Temp.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SysMZ_Tables_Tags.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TEMP_SATHISH.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\UserRegistration.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\User_det_DailyTask.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User_det_DailyTask_oLD.cs">
+      <DependentUpon>mvctest.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="config\Lang\cs-CZ.user.xml" />
+    <Content Include="config\Lang\da-DK.user.xml" />
+    <Content Include="config\Lang\de-DE.user.xml" />
+    <Content Include="config\Lang\en-GB.user.xml" />
+    <Content Include="config\Lang\en-US.user.xml" />
+    <Content Include="config\Lang\es-ES.user.xml" />
+    <Content Include="config\Lang\fr-FR.user.xml" />
+    <Content Include="config\Lang\he-IL.user.xml" />
+    <Content Include="config\Lang\it-IT.user.xml" />
+    <Content Include="config\Lang\ja-JP.user.xml" />
+    <Content Include="config\Lang\ko-KR.user.xml" />
+    <Content Include="config\Lang\nb-NO.user.xml" />
+    <Content Include="config\Lang\nl-NL.user.xml" />
+    <Content Include="config\Lang\pl-PL.user.xml" />
+    <Content Include="config\Lang\pt-BR.user.xml" />
+    <Content Include="config\Lang\ru-RU.user.xml" />
+    <Content Include="config\Lang\sv-SE.user.xml" />
+    <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\mvctest.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mvctest.edmx</DependentUpon>
+      <LastGenOutput>mvctest.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\mvctest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mvctest.edmx</DependentUpon>
+      <LastGenOutput>mvctest.cs</LastGenOutput>
+    </Content>
+    <Content Include="Photos\college-students.jpg" />
+    <Content Include="Photos\photography-trends-for-your-website-10.png" />
+    <Content Include="Photos\White-and-Rose-Gold-font-b-Ballpoint-b-font-font-b-Pen-b-font-Luxury-Metal.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="Media\Web.config" />
+    <Content Include="config\trees.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\scripting.config" />
+    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\log4net.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\FileSystemProviders.config" />
+    <Content Include="config\feedProxy.config" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\ExamineIndex.config" />
+    <Content Include="config\EmbeddedMedia.config" />
+    <Content Include="config\Dashboard.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\BaseRestExtensions.config" />
+    <Content Include="config\BackOfficeTours\getting-started.json" />
+    <Content Include="config\applications.config" />
+    <Content Include="config\404handlers.config" />
+    <EntityDeploy Include="Models\mvctest.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mvctest.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\mvctest.edmx.diagram">
+      <DependentUpon>mvctest.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\Timesheet.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\EmailBillings\Create.cshtml" />
+    <Content Include="Views\EmailBillings\Delete.cshtml" />
+    <Content Include="Views\EmailBillings\Details.cshtml" />
+    <Content Include="Views\EmailBillings\Edit.cshtml" />
+    <Content Include="Views\EmailBillings\Index.cshtml" />
+    <Content Include="Views\BillDet1500Form\Create.cshtml" />
+    <Content Include="Views\BillDet1500Form\Delete.cshtml" />
+    <Content Include="Views\BillDet1500Form\Details.cshtml" />
+    <Content Include="Views\BillDet1500Form\Edit.cshtml" />
+    <Content Include="Views\BillDet1500Form\Index.cshtml" />
+    <Content Include="Views\EOBFile\Create.cshtml" />
+    <Content Include="Views\EOBFile\Delete.cshtml" />
+    <Content Include="Views\EOBFile\Details.cshtml" />
+    <Content Include="Views\EOBFile\Edit.cshtml" />
+    <Content Include="Views\EOBFile\Index.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Module\Create.cshtml" />
+    <Content Include="Views\Module\Delete.cshtml" />
+    <Content Include="Views\Module\Details.cshtml" />
+    <Content Include="Views\Module\Edit.cshtml" />
+    <Content Include="Views\Module\Index.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Screen\Create.cshtml" />
+    <Content Include="Views\Screen\Delete.cshtml" />
+    <Content Include="Views\Screen\Details.cshtml" />
+    <Content Include="Views\Screen\Edit.cshtml" />
+    <Content Include="Views\Screen\Index.cshtml" />
+    <Content Include="Views\TabPage\Create.cshtml" />
+    <Content Include="Views\TabPage\Delete.cshtml" />
+    <Content Include="Views\TabPage\Details.cshtml" />
+    <Content Include="Views\TabPage\Edit.cshtml" />
+    <Content Include="Views\TabPage\Index.cshtml" />
+    <Content Include="Views\Components\Create.cshtml" />
+    <Content Include="Views\Components\Delete.cshtml" />
+    <Content Include="Views\Components\Details.cshtml" />
+    <Content Include="Views\Components\Edit.cshtml" />
+    <Content Include="Views\Components\Index.cshtml" />
+    <Content Include="Views\Table\Create.cshtml" />
+    <Content Include="Views\Table\Delete.cshtml" />
+    <Content Include="Views\Table\Details.cshtml" />
+    <Content Include="Views\Table\Edit.cshtml" />
+    <Content Include="Views\Table\Index.cshtml" />
+    <Content Include="Views\TestCases\Create.cshtml" />
+    <Content Include="Views\TestCases\Delete.cshtml" />
+    <Content Include="Views\TestCases\Details.cshtml" />
+    <Content Include="Views\TestCases\Edit.cshtml" />
+    <Content Include="Views\TestCases\Index.cshtml" />
+    <Content Include="Views\TestCaseType\Create.cshtml" />
+    <Content Include="Views\TestCaseType\Delete.cshtml" />
+    <Content Include="Views\TestCaseType\Details.cshtml" />
+    <Content Include="Views\TestCaseType\Edit.cshtml" />
+    <Content Include="Views\TestCaseType\Index.cshtml" />
+    <Content Include="Views\GeneralTestCases\Create.cshtml" />
+    <Content Include="Views\GeneralTestCases\Delete.cshtml" />
+    <Content Include="Views\GeneralTestCases\Details.cshtml" />
+    <Content Include="Views\GeneralTestCases\Edit.cshtml" />
+    <Content Include="Views\GeneralTestCases\Index.cshtml" />
+    <Content Include="Views\IssueStatus\Create.cshtml" />
+    <Content Include="Views\IssueStatus\Delete.cshtml" />
+    <Content Include="Views\IssueStatus\Details.cshtml" />
+    <Content Include="Views\IssueStatus\Edit.cshtml" />
+    <Content Include="Views\IssueStatus\Index.cshtml" />
+    <Content Include="Views\IssuePriority\Create.cshtml" />
+    <Content Include="Views\IssuePriority\Delete.cshtml" />
+    <Content Include="Views\IssuePriority\Details.cshtml" />
+    <Content Include="Views\IssuePriority\Edit.cshtml" />
+    <Content Include="Views\IssuePriority\Index.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\DocumentType\Create.cshtml" />
+    <Content Include="Views\DocumentType\Delete.cshtml" />
+    <Content Include="Views\DocumentType\Details.cshtml" />
+    <Content Include="Views\DocumentType\Edit.cshtml" />
+    <Content Include="Views\DocumentType\Index.cshtml" />
+    <Content Include="Views\version\Create.cshtml" />
+    <Content Include="Views\version\Delete.cshtml" />
+    <Content Include="Views\version\Details.cshtml" />
+    <Content Include="Views\version\Edit.cshtml" />
+    <Content Include="Views\version\Index.cshtml" />
+    <Content Include="Views\HowDoI\Create.cshtml" />
+    <Content Include="Views\HowDoI\Delete.cshtml" />
+    <Content Include="Views\HowDoI\Details.cshtml" />
+    <Content Include="Views\HowDoI\Edit.cshtml" />
+    <Content Include="Views\HowDoI\Index.cshtml" />
+    <Content Include="Views\Training\Create.cshtml" />
+    <Content Include="Views\Training\Delete.cshtml" />
+    <Content Include="Views\Training\Details.cshtml" />
+    <Content Include="Views\Training\Edit.cshtml" />
+    <Content Include="Views\Training\Index.cshtml" />
+    <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\User\VerifyAccount.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61222</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61021/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

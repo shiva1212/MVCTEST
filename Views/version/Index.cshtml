@@ -1,0 +1,90 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<MvcTest.Models.Gen_Mst_version>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="font-family:Arial">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New record", "Create")
+    </p>
+    <p>
+        @using (@Html.BeginForm())
+        {
+            <label for="SearchString">VersionName:</label>
+            @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <button type="submit" name="VersionName" class="btn btn-info">
+                <span class="glyphicon glyphicon-search"></span> Search
+            </button>
+        }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().versioncode)
+            </th>
+            <th>
+                @Html.ActionLink("VersionName", "Index", new { sortBy = ViewBag.SortVersionNameParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedBy)
+            </th>
+            <th>
+                @Html.ActionLink("CreatedDate", "Index", new { sortBy = ViewBag.SortVersionNameParameter, currentFilter = ViewBag.CurrentFilter, SearchString = Request.QueryString["SearchString"] })
+            </th>
+
+            <th>Action</th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr class="text-danger">
+                <td colspan="5"><b>No Rows Match Search Criteria</b></td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr class="text-success">
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.versioncode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.versionname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CreatedBy }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.CreatedBy }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.CreatedBy })
+                        @*<center>
+                            <a href="@Url.Action("Details","Version",new {id = item.CreatedBy })">
+                                <img src="@Url.Content("~/Images/info.png")" alt="Details" />
+                            </a> <br />
+                            <a href="@Url.Action("Edit","Version",new {id = item.CreatedBy })">
+                                <img src="@Url.Content("~/Images/pen.png")" alt="Edit" />
+                            </a> <br />
+                            <a href="@Url.Action("Delete","Version",new {id = item.CreatedBy })">
+                                <img src="@Url.Content("~/Images/bin.png")" alt="Delete" />
+                            </a>
+                        </center>*@
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
+@Html.PagedListPager(Model, Page => Url.Action("Index", new { Page, SearchString = Request.QueryString["SearchString"], currentFilter = Request.QueryString["currentFilter"], sortBy = Request["sortBy"] }),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })

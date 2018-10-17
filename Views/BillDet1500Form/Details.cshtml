@@ -1,0 +1,1450 @@
+﻿@model MvcTest.Models.Bill_Det_1500Form
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BillDet1500Form</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClientCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClientCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1Medicare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1Medicare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1Medicaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1Medicaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1Tricare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1Tricare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1CHAMPVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1CHAMPVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1Group)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1Group)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1FECA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1FECA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo1a)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo1a)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo3DOBMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo3DOBMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo3DOBDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo3DOBDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo3DOBYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo3DOBYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo3SexMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo3SexMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo3SexFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo3SexFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo5Add)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo5Add)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo5City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo5City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo5Sta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo5Sta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo5Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo5Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo5Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo5Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo5Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo5Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo6Self)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo6Self)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo6Spouse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo6Spouse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo6Child)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo6Child)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo6Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo6Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo7Add)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo7Add)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo7City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo7City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo7Sta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo7Sta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo7Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo7Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo7Area)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo7Area)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo7Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo7Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo8Single)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo8Single)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo8Married)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo8Married)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo8Other)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo8Other)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo8Employed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo8Employed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo8FullTimeStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo8FullTimeStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo8PartTimeStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo8PartTimeStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9a)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9a)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9bDOBMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9bDOBMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9bDOBDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9bDOBDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9bDOBYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9bDOBYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9bSexMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9bSexMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9bSexFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9bSexFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9c)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9c)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo9d)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo9d)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10aYes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10aYes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10aNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10aNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10bYes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10bYes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10bNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10bNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10bPlace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10bPlace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10cYes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10cYes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10cNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10cNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo10d)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo10d)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11aDOBMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11aDOBMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11aDOBDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11aDOBDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11aDOBYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11aDOBYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11aSexMale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11aSexMale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11aSexFemale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11aSexFemale)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11b)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11b)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11c)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11c)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11dYes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11dYes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo11dNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo11dNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo12Sign)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo12Sign)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo12Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo12Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo13Sign)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo13Sign)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo14MM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo14MM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo14DD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo14DD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo14YY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo14YY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo15MM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo15MM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo15DD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo15DD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo15YY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo15YY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo16FromMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo16FromMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo16FromDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo16FromDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo16FromYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo16FromYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo16ToMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo16ToMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo16ToDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo16ToDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo16ToYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo16ToYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo17)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo17)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo17A)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo17A)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo17NPI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo17NPI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo18FromMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo18FromMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo18FromDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo18FromDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo18FromYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo18FromYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo18ToMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo18ToMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo18ToDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo18ToDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo18ToYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo18ToYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo19)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo19)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo20aYes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo20aYes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo20aNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo20aNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo20bChargesA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo20bChargesA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo20bChargesB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo20bChargesB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo21IcdCode1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo21IcdCode1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo21IcdCode2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo21IcdCode2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo21IcdCode3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo21IcdCode3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo21IcdCode4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo21IcdCode4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo21IcdCode5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo21IcdCode5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo21IcdCode6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo21IcdCode6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo22Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo22Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo22RefNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo22RefNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo23)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo23)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24AFromMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24AFromMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24AFromDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24AFromDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24AFromYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24AFromYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24AToMM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24AToMM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24AToDD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24AToDD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24AToYY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24AToYY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24B)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24B)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24C)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24C)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24Mod1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24Mod1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24Mod2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24Mod2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24Mod3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24Mod3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24Mod4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24Mod4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24E)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24E)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BilledAmt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BilledAmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24VisitDtOhio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24VisitDtOhio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BilledDateOhio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BilledDateOhio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24FOh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24FOh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24F)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24F)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24FDec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24FDec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24G)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24G)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24I)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24I)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24Ja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24Ja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo24JNPI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo24JNPI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo25a)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo25a)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo25bSSN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo25bSSN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo25bEIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo25bEIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo26)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo26)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo27Yes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo27Yes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo27No)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo27No)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo31a)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo31a)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo31b)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo31b)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo32a)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo32a)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo32b)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo32b)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo32c)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo32c)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo32aNPI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo32aNPI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo33a)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo33a)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo33b)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo33b)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo33c)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo33c)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo33d)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo33d)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo33e)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo33e)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoxNo33F)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoxNo33F)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SortOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SortOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceFlag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrintLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrintLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsAddress1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsAddress1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsHead2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsHead2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsHead3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsHead3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsCityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsCityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsStateCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsStateCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FromVisitDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromVisitDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProviderAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProZip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProZip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MedicalRecordNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedicalRecordNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProviderServiceCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProviderServiceCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BilledDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BilledDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AllowedAmt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AllowedAmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deductable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deductable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoIns)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoIns)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatePaidByMedicar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatePaidByMedicar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Insamount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Insamount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsHCFABox29)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsHCFABox29)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsHCFABox30)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsHCFABox30)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill_Mst_1500Form.ClientCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill_Mst_1500Form.ClientCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RowNum }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
